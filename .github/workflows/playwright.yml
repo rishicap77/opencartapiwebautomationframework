@@ -32,7 +32,7 @@ jobs:
         env:
           ENV: qa
           BASE_URL: ${{ secrets.BASE_URL }}
-          USERNAME: ${{ secrets.USER }}
+          USER: ${{ secrets.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           API_TOKEN: ${{ secrets.API_TOKEN }}
