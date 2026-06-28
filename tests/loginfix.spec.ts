@@ -69,7 +69,7 @@ for(let data of jsondata){
 //commom features testing
 
 test('verify title of page',async({basepage})=>{
-expect(await basepage.getpagetitle()).toBe('My Account')
+expect(await basepage.getpagetitle()).toBe('Account Login')
 })
 
 test('verify logo of page',async({basepage})=>{
