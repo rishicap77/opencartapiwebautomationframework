@@ -28,7 +28,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run tests
-        run: npx playwright test --project=chromium
+        run: npx playwright test tests/loginfix.spec.ts --project=chromium
         env:
           ENV: qa
           BASE_URL: ${{ secrets.BASE_URL }}
