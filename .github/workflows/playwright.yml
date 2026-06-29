@@ -7,7 +7,16 @@ on:
 #     branches: [master]
 #   pull_request:
 #     branches: [master]
-  workflow_dispatch:  # manual trigger button in GitHub UI
+  workflow_dispatch:  
+  inputs:
+  environment:
+  description: 'Select environment'
+  required: true
+  defailt: 'qa'
+  type: choice
+  options:
+  - qa
+  - stg
 
 jobs:
   test:
@@ -45,7 +54,7 @@ jobs:
       - name: Run tests
         run: npx playwright test tests/loginfix.spec.ts --project=chromium
         env:
-          ENV: qa
+          ENV: ${{ github.event.inputs.environment || 'qa'}}
           BASE_URL: ${{ secrets.BASE_URL }}
           USER: ${{ secrets.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
