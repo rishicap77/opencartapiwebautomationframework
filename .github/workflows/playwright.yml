@@ -17,6 +17,8 @@ on:
           options:
             - qa
             - stg
+            - dev
+            - prod
 
 jobs:
   test:
